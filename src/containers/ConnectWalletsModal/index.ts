@@ -1,1 +1,0 @@
-export { ConnectWalletsModal } from './ConnectWalletsModal';

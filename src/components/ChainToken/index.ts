@@ -1,1 +1,0 @@
-export { ChainToken } from './ChainToken';

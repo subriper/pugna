@@ -1,7 +1,4 @@
-# @rango-dev/ui
+# @rango-dev/widget-embedded
 
-Rango UI design system components
+Rango Embedded Widget
 
-### Icons
-
-Add your svg icon to `svgs/resources/` then run `yarn build:icons`.
