@@ -1,1 +1,0 @@
-export { LoadingSwapDetails } from './LoadingSwapDetails';
