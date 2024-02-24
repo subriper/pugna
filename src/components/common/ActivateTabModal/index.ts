@@ -1,1 +1,0 @@
-export { ActivateTabModal } from './ActivateTabModal';
