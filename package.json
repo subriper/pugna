@@ -1,23 +1,76 @@
 {
-  "name": "@rango-dev/widget-app",
-  "version": "0.13.1-next.34",
+  "name": "@rango-dev/ui",
+  "version": "0.29.1-next.0",
   "license": "MIT",
-  "private": true,
-  "source": "public/index.html",
-  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "type": "module",
+  "source": "./src/index.ts",
+  "main": "./dist/index.js",
+  "exports": "./dist/index.js",
+  "typings": "dist/widget/ui/src/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
-    "dev": "parcel -p 3002 --cache-dir=.parcel-cache --no-cache",
-    "build": "parcel build --cache-dir=.parcel-cache && cp ./vercel.json ./dist",
+    "dev": "yarn bundle --watch",
+    "build": "node ../../scripts/build/command.mjs --path widget/ui",
     "ts-check": "tsc --declaration --emitDeclarationOnly -p ./tsconfig.json",
-    "clean": "rimraf .parcel-cache && rimraf dist",
+    "build:icons": "svgr svgs/resources/fill --config-file svgs/configs/.svgrrc.default.cjs",
+    "type-checking": "tsc --declaration --emitDeclarationOnly",
+    "storybook": "storybook dev -p 3000",
+    "build-storybook": "storybook build",
+    "clean": "rimraf dist",
     "format": "prettier --write '{.,src}/**/*.{ts,tsx}'",
     "lint": "eslint \"**/*.{ts,tsx}\" --ignore-path ../../.eslintignore"
   },
-  "devDependencies": {},
-  "dependencies": {
-    "@rango-dev/widget-embedded": "^0.23.1-next.0",
+  "peerDependencies": {
+    "@lingui/core": "4.2.1",
+    "@lingui/react": "4.2.1",
+    "react": ">=16"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.2",
+    "@babel/preset-env": "^7.21.4",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.21.4",
+    "@lingui/core": "4.2.1",
+    "@lingui/react": "4.2.1",
+    "@storybook/addon-essentials": "^7.1.1",
+    "@storybook/addon-info": "^5.3.21",
+    "@storybook/addon-links": "^7.1.1",
+    "@storybook/addons": "^7.1.1",
+    "@storybook/react": "^7.1.1",
+    "@storybook/react-webpack5": "^7.1.1",
+    "@svgr/babel-plugin-remove-jsx-attribute": "8.0.0",
+    "@svgr/cli": "^8.0.1",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.8",
+    "babel-loader": "^9.1.0",
+    "husky": "^8.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.8.0"
+    "react-is": "^18.2.0",
+    "storybook": "^7.1.1",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.4.1",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "@radix-ui/react-checkbox": "^1.0.1",
+    "@radix-ui/react-collapsible": "^1.0.3",
+    "@radix-ui/react-popover": "^1.0.6",
+    "@radix-ui/react-radio-group": "^1.1.1",
+    "@radix-ui/react-select": "^2.0.0",
+    "@radix-ui/react-switch": "^1.0.1",
+    "@radix-ui/react-tooltip": "^1.0.2",
+    "@rango-dev/wallets-shared": "^0.28.0",
+    "@stitches/react": "^1.2.8",
+    "rango-sdk": "^0.1.45",
+    "rango-types": "^0.1.59",
+    "react-virtuoso": "^4.6.2",
+    "rgb-hex": "^4.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
