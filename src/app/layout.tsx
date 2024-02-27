@@ -4,8 +4,8 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Rango Widget on Next.js',
-  description: 'Rango exchange.',
+  title: 'PugnaSwap',
+  description: 'Pugnaswap DEX Agregator',
 }
 
 export default function RootLayout({
